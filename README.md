@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/ViniciusVonAhn/MercadoWeb.svg?branch=master)](https://travis-ci.org/ViniciusVonAhn/MercadoWeb)
+
 # MercadoWebFront-end
 
 > Projeto front-end da disciplina de algoritimos 3
