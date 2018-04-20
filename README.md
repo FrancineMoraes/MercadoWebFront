@@ -1,6 +1,6 @@
-# mercadoweb
+# MercadoWebFront-end
 
-> Projeto da disciplina de algoritimos 3
+> Projeto front-end da disciplina de algoritimos 3
 
 ## Build Setup
 
