@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OIOIOIOI</h1>
+    <div id="aplication">
+            <ul id="app1">
+                    <li v-for="login in logins">
+                    {{login.usuario}}
+                    {{login.senha}}
+                    </li>
+                  </ul>
+    </div>
+</body>
+</html>
+
+<script>
+var aplication = new Vue({
+        el: "#app1",
+        data: {
+            logins:[]
+        },
+
+        created:function (){
+            this.$http.get("localhost:8080/lista").then(function (response){
+                this.logins=response.body;    
+            }), function (response){
+                console.log("nao deu certo")
+            }
+            
+        }
+    }),
+	
+
+</script>
