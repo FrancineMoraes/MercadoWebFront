@@ -15,11 +15,11 @@ export default {
 		Signin
 	},
 
-	methods: {
-		doSignIn (obj) {
+	//methods: {
+	//	doSignIn (obj) {
 
-		}
-	}
+	//	}
+	//}
 	
 }
 </script>
