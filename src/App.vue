@@ -1,24 +1,20 @@
 <template>
   <div id="app">
-    <!--<button @click.stop.prevent="getUsers()">GET USERS</button>-->
+    <Navbar/>
     <router-view/>
   </div>
 </template>
 
 <script>
 
+import Navbar from './components/Navbar'
+
 export default {
-  //testes getUsuarios
   
-  name: 'App', 
-    methods: {
-      getUsers(){
-        var url = 'http://localhost:8080/login/lista';
-        this.$http.get(url).then(function(r){
-          console.log(r.body);
-        })
-      }
-    }
+  components: {
+    Navbar
+  }
+  
 }
 </script>
 
