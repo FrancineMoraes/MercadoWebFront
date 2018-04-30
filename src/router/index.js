@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Main from '@/components/Main'
 import CreateProducts from '@/components/crudProducts/CreateProducts'
+import ListProducts from '@/components/crudProducts/ListProducts'
 import Signin from '@/components/login/Signin'
 import NotFound from '@/components/GeneralViews/NotFoundPage'
 
@@ -31,7 +32,11 @@ export default new Router({
       component: Signin
     },
 
-
+    {
+      path: '/listaProdutos',
+      name: 'listaProduto',
+      component: ListProducts
+    },
     //notfound
     {path: '*', component: NotFound}
   ]
