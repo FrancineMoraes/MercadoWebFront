@@ -30,7 +30,7 @@ export default {
       this.$http.get("http://localhost:8080/produto").then(function(response){
           this.produtos = response.body;
       }, function(response){
-          console.log("nao funcionou")
+          console.log("Nao funcionou")
       })
   }
 }
