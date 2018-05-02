@@ -1,6 +1,9 @@
-# mercadoweb
+[![Build Status](https://travis-ci.org/ViniciusVonAhn/MercadoWeb.svg?branch=master)](https://travis-ci.org/ViniciusVonAhn/MercadoWeb)
 
-> Projeto da disciplina de algoritimos 3
+# MercadoWebFront-end
+
+> Projeto front-end da disciplina de algoritimos 3
+> Aplicação para um mercado pequeno, controle de vendas e estoque.
 
 ## Build Setup
 
@@ -8,7 +11,7 @@
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8080 - o front está programado para receber dados da api no endereço localhost:8080 e a api fornecer dados para o front no endereço localhost:8081
 npm run dev
 
 # build for production with minification

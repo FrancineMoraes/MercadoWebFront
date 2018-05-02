@@ -6,6 +6,7 @@ import CreateProducts from '@/components/crudProducts/CreateProducts'
 import ListProducts from '@/components/crudProducts/ListProducts'
 import Signin from '@/components/login/Signin'
 import NotFound from '@/components/GeneralViews/NotFoundPage'
+import ListProducts from '@/components/crudProducts/ListProducts'
 
 
 Vue.use(Router)
@@ -33,10 +34,19 @@ export default new Router({
     },
 
     {
+<<<<<<< HEAD
       path: '/listaProdutos',
       name: 'listaProduto',
       component: ListProducts
     },
+=======
+      path: '/listProducts',
+      name: 'ListProducts',
+      component: ListProducts
+    },
+
+
+>>>>>>> master
     //notfound
     {path: '*', component: NotFound}
   ]
