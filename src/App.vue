@@ -1,19 +1,11 @@
 <template>
   <div id="app">
-<<<<<<< HEAD
-      
-=======
     <Navbar/>
->>>>>>> master
     <router-view/>
   </div>
 </template>
 
 <script>
-<<<<<<< HEAD
-export default {}
-=======
-
 import Navbar from './components/Navbar'
 
 export default {
@@ -23,7 +15,6 @@ export default {
   }
   
 }
->>>>>>> master
 </script>
 
 <style>
