@@ -6,6 +6,8 @@ import CreateProducts from '@/components/crudProducts/CreateProducts'
 import ListProducts from '@/components/crudProducts/ListProducts'
 import Signin from '@/components/login/Signin'
 import NotFound from '@/components/GeneralViews/NotFoundPage'
+import ListUser from '@/components/crudUser/ListUser'
+import CreateUser from '@/components/crudUser/CreateUser'
 
 Vue.use(Router)
 
@@ -20,9 +22,21 @@ export default new Router({
     },
 
     {
-      path: '/cadastro',
+      path: '/cadastroProdutos',
       name: 'cadastro',
       component: CreateProducts
+    },
+
+    {
+      path: '/cadastroUsuarios',
+      name: 'cadastroUsu',
+      component: CreateUser
+    },
+
+    {
+      path: '/listaUsuarios',
+      name: 'listaUsu',
+      component:  ListUser
     },
 
     {

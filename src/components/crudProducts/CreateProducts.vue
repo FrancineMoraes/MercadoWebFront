@@ -26,7 +26,10 @@
 
 <script>
 //const url = 'https://5ae67b7736a18b00144e39a8.mockapi.io/produtos'
-const url = "http://localhost:8080"
+//const url = "https://mercado-web.herokuapp.com/produto"
+
+const url = "http://localhost:8080/produto"
+
 export default {
 
   data(){
@@ -45,15 +48,22 @@ export default {
 
 
   methods: {
+      /*
+      limpaform(){
+          this.produto.codigoDeBarra = "";
+          this.produto.estoque = "";
+          this.produto.nome = "";
+          this.produto.valorUn = "";
+      },
+      */
 
       insert(){
-          console.log(this.produto)
-          
           this.$http.post(url, this.produto).then(function(response){
-          console.log(response, " funcionou");
-      }, function(error){
-          console.log(error, " nao funcionou")
-      });
+              console.log(response, " funcionou");
+          }, function(error){
+              console.log(error, " nao funcionou")
+          });
+      
       }
   }
   }

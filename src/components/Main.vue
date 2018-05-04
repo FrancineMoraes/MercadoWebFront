@@ -1,6 +1,5 @@
 <template>
 	<div class="formlogin">
-		
 		<Signin @do-sign-in="doSignIn"/>
 	</div>
 </template>
@@ -14,13 +13,6 @@ export default {
 	
 	components: {
 		Signin
-	},
-
-	//methods: {
-	//	doSignIn (obj) {
-
-	//	}
-	//}
-	
+	}
 }
 </script>
