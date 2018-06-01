@@ -2,12 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Main from '@/components/Main'
-import CreateProducts from '@/components/crudProducts/CreateProducts'
-import ListProducts from '@/components/crudProducts/ListProducts'
+import ListProducts from '@/components/Products/ListProducts'
+import ListUsers from '@/components/Users/ListUsers'
 import Signin from '@/components/login/Signin'
 import NotFound from '@/components/GeneralViews/NotFoundPage'
-import ListUser from '@/components/crudUser/ListUser'
-import CreateUser from '@/components/crudUser/CreateUser'
+import SearchBox from '@/components/Products/SearchBox'
+import Venda from '@/components/Venda/Venda'
 
 Vue.use(Router)
 
@@ -22,21 +22,21 @@ export default new Router({
     },
 
     {
-      path: '/cadastroProdutos',
-      name: 'cadastro',
-      component: CreateProducts
+      path: '/venda',
+      name: 'Venda',
+      component: Venda
     },
 
     {
-      path: '/cadastroUsuarios',
-      name: 'cadastroUsu',
-      component: CreateUser
+      path: '/produtos/busca',
+      name: 'SearchBox',
+      component: SearchBox
     },
 
     {
-      path: '/listaUsuarios',
-      name: 'listaUsu',
-      component:  ListUser
+      path: '/usuarios',
+      name: 'ListUsers',
+      component: ListUsers
     },
 
     {
@@ -46,7 +46,7 @@ export default new Router({
     },
 
     {
-      path: '/listProducts',
+      path: '/produtos',
       name: 'ListProducts',
       component: ListProducts
     },
