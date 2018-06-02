@@ -13,7 +13,7 @@ export const init = {
         
         select(obj) {
             this.selected = obj;
-            console.log('selectedddddd mmeu parceiro    ' + this.selected.produto_id)
+            console.log('selectedddddd mmeu parceiro    ' + this.selected.id)
             this.$bus.$emit("objectEmited", this.selected);
         },
         init() {

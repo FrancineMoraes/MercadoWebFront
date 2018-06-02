@@ -13,7 +13,6 @@
        <tr v-for="log in login" :key="log.id">
            <td>{{log.usuario}}</td>
            <td>{{log.senha}}</td>
-           <td>ISJOIDJAIOJD</td>
            <th>
               <input type="radio" name="log" @change="select(log)">
            </th>

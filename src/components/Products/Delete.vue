@@ -50,7 +50,7 @@ export default {
     el(){
       this.route = '/produto/';
       this.datas = JSON.stringify({
-        id: this.produto_id,
+        id: this.id,
       })
     }
   },
@@ -62,7 +62,7 @@ export default {
         this.codigoDeBarra = prod.codigoDeBarra;
         this.estoque = prod.estoque;
         this.valorUn = prod.valorUn;
-        this.id = prod.produto_id;
+        this.id = prod.id;
 
         console.log('========================== delete  ==============================');
         console.log('delete parametro ==> ' + prod.nome)

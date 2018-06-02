@@ -27,7 +27,7 @@
         <template slot="button-content">
           Usuários
         </template>
-        <b-dropdown-item href="#">Lista de Usuários</b-dropdown-item>
+        <b-dropdown-item href="/usuarios">Lista de Usuários</b-dropdown-item>
         <b-dropdown-item href="#">Busca de Usuários</b-dropdown-item>
       
       </b-nav-item-dropdown>

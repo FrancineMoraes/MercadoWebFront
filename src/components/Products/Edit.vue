@@ -9,7 +9,7 @@
 
       <form slot="content" class="form-admin-modal">
           <input type="text" v-model="nome" placeholder="nome" required>
-          <input type="text" v-model="codigoDeBarra" placeholder="cdigo de barra">
+          <input type="text" v-model="codigoDeBarra" placeholder="codigo de barra">
           <input type="text" v-model="estoque" placeholder="estoque" required>
           <input type="text" v-model="  valorUn" placeholder="valor unitario" required >
         </form>
@@ -55,7 +55,7 @@ export default {
         this.codigoDeBarra = prod.codigoDeBarra;
         this.estoque = prod.estoque;
         this.valorUn = prod.valorUn;
-        this.id = prod.produto_id;
+        this.id = prod.id;
         
         console.log('========================== edit  ==============================');
         console.log('parametro ====> ' + prod.nome)

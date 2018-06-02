@@ -12,7 +12,7 @@
               <Edit />
             </th>  
        </tr>
-       <tr v-for="prod in produto" :key="prod.produto_id">
+       <tr v-for="prod in produto" :key="prod.id">
            <td>{{prod.nome}}</td>
            <td>{{prod.codigoDeBarra}}</td>
            <td>{{prod.estoque}}</td>
