@@ -8,6 +8,7 @@
       <h2 slot="header">Editar Produto</h2>
 
       <form slot="content" class="form-admin-modal">
+          
           <input type="text" v-model="nome" placeholder="nome" required>
           <input type="text" v-model="codigoDeBarra" placeholder="codigo de barra">
           <input type="text" v-model="estoque" placeholder="estoque" required>
@@ -43,7 +44,7 @@ export default {
             codigoDeBarra: '',
             estoque: '',
             valorUn: '',
-            id: '',
+            produto_id: '',
             datas: '',
       };
     },
@@ -51,11 +52,13 @@ export default {
     created() {
     this.showModal = false;
     this.$bus.$on("objectEmited", (prod) => {
+        
+        this.produto_id = prod.produto_id;
         this.nome = prod.nome
         this.codigoDeBarra = prod.codigoDeBarra;
         this.estoque = prod.estoque;
         this.valorUn = prod.valorUn;
-        this.id = prod.id;
+        
         
         console.log('========================== edit  ==============================');
         console.log('parametro ====> ' + prod.nome)
@@ -64,14 +67,14 @@ export default {
     },
 
     methods: {
-        el(){
+        el(){   
         this.route = '/produto/',
         this.datas = JSON.stringify({
-            id: this.id,
+            produto_id: this.produto_id,
             nome: this.nome,
             codigoDeBarra: this.codigoDeBarra,
             estoque: this.estoque,
-            valorUn: this.valorUn
+            valorUn: this.valorUn,
             
         })
             console.log('datassss edit nessa caralhaaaaa' + this.datas);
