@@ -22,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="prod in produtos" v-bind:key="prod.produto_id">
+                    <tr v-for="prod in produtos" v-bind:key="prod.id">
                         <td scope="row">{{prod.nome}}</td>
                         <td scope="row">{{prod.estoque}}</td>
                         <td scope="row">{{prod.codigoDeBarra}}</td>
@@ -55,12 +55,12 @@ export default {
             axios
             .get(montada)
             .then(response => {
-                var object = JSON.stringify(response.data)
-                this.produtos = object
-
-                console.log(this.produtos + "printzaooooo") 
-                console.log(error)
+                this.produtos = response.data;
+                for(let i = 0; i<this.produtos.lenght; i++){
+                    this.produtos = this.produtos[i];
+                }
                 }).catch(error => {
+                    console.log(error)
             })
         }
     }, 
