@@ -23,6 +23,7 @@ export const init = {
               .get(this.url + this.route)
               .then(res => {
                   this.produto = res.data;
+                  this.login = res.data;
               });
           },
     },

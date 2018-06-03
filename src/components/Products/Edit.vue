@@ -44,7 +44,7 @@ export default {
             codigoDeBarra: '',
             estoque: '',
             valorUn: '',
-            produto_id: '',
+            id: '',
             datas: '',
       };
     },
@@ -53,7 +53,7 @@ export default {
     this.showModal = false;
     this.$bus.$on("objectEmited", (prod) => {
         
-        this.produto_id = prod.produto_id;
+        this.id = prod.id;
         this.nome = prod.nome
         this.codigoDeBarra = prod.codigoDeBarra;
         this.estoque = prod.estoque;
@@ -70,7 +70,7 @@ export default {
         el(){   
         this.route = '/produto/',
         this.datas = JSON.stringify({
-            produto_id: this.produto_id,
+            id: this.id,
             nome: this.nome,
             codigoDeBarra: this.codigoDeBarra,
             estoque: this.estoque,
