@@ -26,7 +26,7 @@ export const create = {
                 headers: { 'Content-Type': 'application/json'},
             })
             .then( (response) => {
-                console.log('sucess')
+                console.log('sucess do cupomzinto')
             })
             .catch(error => console.log(error))
               

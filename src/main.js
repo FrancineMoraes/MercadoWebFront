@@ -7,7 +7,6 @@ import Vuex from 'vuex'
 import store from './store/store'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
-import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 Vue.use(Vuex)
 Vue.use(VueResource)

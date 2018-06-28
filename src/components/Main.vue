@@ -6,7 +6,7 @@
 
 <script>
 
-import Signin from './login/Signin'
+import Signin from './Login/Signin'
 export default {
 	 
 	name: 'Main',

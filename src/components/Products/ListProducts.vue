@@ -1,5 +1,11 @@
 <template>
   <div>
+    <div style="margin: -60px 0px 0px 0px;">
+      <Navbar/>
+    </div>
+
+    <div class="col-sm-12"><br><br></div>
+    
     <table>
        <tr>
            <th>Nome</th>
@@ -28,6 +34,7 @@
 </template>
 
 <script>
+import Navbar from '../Navbar'
 import { url } from '../mixins/url.js'
 import { init } from '../mixins/init.js'
 import Create from './Create'
@@ -36,7 +43,7 @@ import Edit from './Edit'
 
 export default {
 
-  components: { Create, Delete, Edit},
+  components: { Create, Delete, Edit, Navbar},
   
   mixins: [ url, init ],
 

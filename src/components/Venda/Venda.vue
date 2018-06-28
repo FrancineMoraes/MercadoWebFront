@@ -1,46 +1,164 @@
 <template>
     <div>
-        <div class="col-sm-12">
-            <div class="col-sm-8" style="margin: auto;">
-                <label for="nome">Descrição do produto: </label>
-                <input type="text" name="nome">
-                <br><br>
-            </div>
+        <div style="margin: -60px 0px 0px 0px;">
+            <Navbar/>
+        </div>
+        <div style="margin: 0 auto;">
+            <div class="col-sm-12"><br><br></div>
+            <Cupom/>
         </div>
 
-        <div class="col-sm-12"><br></div>
+        <div class="paizao">
 
-        <div class="col-sm-3">
-            <div class="col-sm-12">
-            <label for="codigoDeBarra">Código de Barra: </label>
-            <input type="text" name="codigoDeBarra">
+            <div class="esquerda">
+                    <div class="itens">
+                        <label for="count"> Itens
+                            <input type="text" name="count" :value="count" disabled>
+                        </label>
+                    </div>
+
+                    <div class="total">
+                        <label for="valorTotal"> Total
+                            <input type="text" name="valorTotal" :value="countPrice" disabled>
+                        </label>
+                    </div>
             </div>
 
-            <div class="col-sm-12">
-            <label for="estoque">Quantidade: </label>
-            <input type="text" name="estoque">
+            <div class="direita">
+                <div class="recebido">
+                    <label for="valorRecebido"> Valor Recebido
+                        <input type="text" name="valorRecebido" v-model="valorRecebido">
+                    </label>
+                </div>
+
+                <div class="troco">
+                    <label for="valorTroco"> Troco
+                        <input type="text" name="valorTroco" :value="valorTroco">
+                    </label>
+                </div>
+
+
+                <button type="submit" class="bbtn" @click="counterTroco"></button>    
+                
+                <button type="submit" class="btn btn-success" id="bootshit" @click.stop.prevent="onSubmit">
+                    Finalizar
+                </button>
             </div>
 
-            <div class="col-sm-12">
-            <label for="valorUn">Valor unitário: </label>
-            <input type="text" name="valorUn">
-            </div>
-        </div>
-
-        <div class="col-sm-5" style="float: right;">
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th> actons </th>  
-                </tr>
-                <tr>
-                    <td>oioioi</td>
-                    <td>oioii</td>
-                    <th>
-                        <input type="radio" name="prod" @change="select(prod)">
-                    </th>
-                </tr>
-            </table>
+    
         </div>
     </div>
+
 </template>
+
+
+
+<script>
+import Cupom from './Cupom/Cupom'
+import Navbar from '../Navbar'
+
+export default {
+    components: { Cupom , Navbar},
+
+    data(){
+        return{
+            valorTotal: null,
+            valorRecebido: null,
+            valorTroco: null,
+            cpf: null,
+            count: null, 
+            countPrice: null
+
+        }
+    },
+
+    methods:{
+        el(){
+        this.route = '/venda';
+        this.datas = JSON.stringify({
+
+        });
+      },
+
+      counterTroco(){
+            if(this.valorTotal > this.valorRecebido){
+                alert('Dinheiro insuficiente')
+                return;
+            }
+           
+            let troco = (this.valorRecebido - this.valorTotal)
+            troco = troco.toFixed(2)
+            this.valorTroco = troco
+          
+      }
+    },
+
+    created(){
+        
+        this.$bus.$on('removendo', valorProduto =>{
+            console.log('entrei no removendo')
+            this.count = this.count - 1
+            console.log(this.count)
+            this.countPrice = this.countPrice - valorProduto
+            console.log(this.countPrice)
+            
+            this.$bus.$emit('increment', -1)
+
+            this.$bus.$emit('countPrice' -valorProduto)
+      })
+        
+    
+    this.$bus.$on('increment', count => {
+        this.count = count
+        console.log('this.count' + this.count)
+    }),
+
+    this.$bus.$on('countPrice', countPrice => {
+        this.countPrice = countPrice
+        this.valorTotal = this.countPrice
+        console.log('this.countPrice ' + this.countPrice)
+    })
+    }
+}
+</script>
+
+
+<style>
+.paizao
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 1%;
+}
+
+.direita
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+}
+
+.esquerda
+{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.itens
+{
+    width: 47%;
+}
+
+.recebido
+{
+    width: 47%;
+}
+
+#bootshit
+{
+    height: 2.8em;
+    margin: 1.6em -2em;
+}
+</style>

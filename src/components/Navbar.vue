@@ -1,6 +1,6 @@
 <template>
 <div id="cssmenu">
-    <b-navbar toggleable="md" type="dark" variant="info">
+    <b-navbar toggleable="md" type="dark" variant="dark">
 
   <b-navbar-toggle target="nav_collapse"></b-navbar-toggle>
 
@@ -28,7 +28,7 @@
           Usuários
         </template>
         <b-dropdown-item href="/usuarios">Lista de Usuários</b-dropdown-item>
-        <b-dropdown-item href="#">Busca de Usuários</b-dropdown-item>
+        <b-dropdown-item href="/usuarios/busca">Busca de Usuários</b-dropdown-item>
       
       </b-nav-item-dropdown>
 
@@ -40,10 +40,10 @@
       <b-nav-item-dropdown right>
         <!-- Using button-content slot -->
         <template slot="button-content">
-          User
+          Usuário
         </template>
-        <b-dropdown-item href="#">Profile</b-dropdown-item>
-        <b-dropdown-item href="#">Signout</b-dropdown-item>
+        <b-dropdown-item href="#">Perfil</b-dropdown-item>
+        <b-dropdown-item href="#">Sair</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
 

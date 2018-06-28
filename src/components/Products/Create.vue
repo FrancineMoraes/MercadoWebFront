@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button variant="primary" @click="show" >Adicionar</b-button>
+    <b-button variant="success" @click="show" >Adicionar</b-button>
 
     <modal v-if="showModal" @show="show()">
 

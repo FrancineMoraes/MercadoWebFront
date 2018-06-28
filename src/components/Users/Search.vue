@@ -1,7 +1,7 @@
 <template>
     <div>
             <div style="margin: -60px 0px 0px 0px;">
-               <Navbar/>
+                <Navbar/>
             </div>
 
             <div class="col-sm-12"><br><br></div>
@@ -19,18 +19,14 @@
             <table class="table table-bordered">
                 <thead>
                     <tr>
-                        <th scope="col"> Nome </th>
-                        <th scope="col"> Quantidade </th>
-                        <th scope="col"> Código de Barras </th>
-                        <th scope="col"> Preço </th>
+                        <th scope="col"> Usuário </th>
+                        <th scope="col"> Senha </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="prod in produtos" v-bind:key="prod.id">
-                        <td scope="row">{{prod.nome}}</td>
-                        <td scope="row">{{prod.estoque}}</td>
-                        <td scope="row">{{prod.codigoDeBarra}}</td>
-                        <td scope="row">{{prod.valorUn}}</td>
+                    <tr v-for="log in login" v-bind:key="log.id">
+                        <td scope="row">{{log.usuario}}</td>
+                        <td scope="row">{{log.senha}}</td>
                     </tr>
                 </tbody>
             </table>
@@ -44,27 +40,28 @@ import Navbar from '../Navbar'
 import axios from 'axios'
 
 export default {
-    components: {Navbar},   
+    components: {Navbar},
     
     mixins: [ url ],
 
     data(){
         return{
             search: '',
-            produtos:{},
+            login:{}
         }
     },
 
     methods: {
         Search: function (){
-            var montada = this.url + "/produto/nome/" +this.search;
+            let montada = this.url + "/login/busca/" + this.search;
             
             axios
             .get(montada)
             .then(response => {
-                this.produtos = response.data;
-                for(let i = 0; i<this.produtos.lenght; i++){
-                    this.produtos = this.produtos[i];
+                this.login = response.data;
+                console.log(response.data)
+                for(let i = 0; i<this.login.lenght; i++){
+                    this.login = this.login[i];
                 }
                 }).catch(error => {
                     console.log(error)

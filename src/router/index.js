@@ -4,9 +4,10 @@ import Router from 'vue-router'
 import Main from '@/components/Main'
 import ListProducts from '@/components/Products/ListProducts'
 import ListUsers from '@/components/Users/ListUsers'
-import Signin from '@/components/login/Signin'
+import Signin from '@/components/Login/Signin'
 import NotFound from '@/components/GeneralViews/NotFoundPage'
 import SearchBox from '@/components/Products/SearchBox'
+import Search from '@/components/Users/Search'
 import Venda from '@/components/Venda/Venda'
 
 Vue.use(Router)
@@ -51,7 +52,13 @@ export default new Router({
       component: ListProducts
     },
 
+    {
+      path:'/usuarios/busca',
+      name: 'Search',
+      component: Search
+    },
+
     //notfound
-    {path: '*', component: NotFound}
+    {path: '*', component: NotFound},
   ]
 })
