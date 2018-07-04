@@ -6,7 +6,7 @@
 
             <div class="col-sm-12"><br><br></div>
 
-            <b-nav-form>
+            <b-nav-form style="margin-left: 130px;">
                 <b-form-input size="sm" class="mr-sm-2" type="text" v-model="search"
                 placeholder="Search"/>
                 <b-button  v-on:click="Search()" size="sm" class="my-2 my-sm-0"

@@ -7,7 +7,7 @@
       <h2 slot="header">Adicionar Usuário</h2>
 
       <form slot="content">
-          <input type="text" placeholder="Usuario"  v-model="login.usuario" required>
+          <input type="text" placeholder="usuario"  v-model="login.nome" required>
           <input type="text" placeholder="Senha"  v-model="login.senha" required>
       </form>
 
@@ -36,21 +36,21 @@ export default {
   data(){
       return{
           login: {
-            usuario           :  null,
+            nome           :  null,
             senha             :  null,
          },
       };
   },
   methods:{   
     reset(){
-      this.usuario           =  ''
+      this.nome           =  ''
       this.senha             =  ''
     },
 
     el(){
-        this.route = '/login';
+        this.route = '/usuario';
         this.datas = JSON.stringify({
-        usuario      :  this.login.usuario,
+        nome      :  this.login.nome,
         senha        :  this.login.senha,
       })
     }

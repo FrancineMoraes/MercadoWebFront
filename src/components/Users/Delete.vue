@@ -7,7 +7,7 @@
             <h1 slot="header">Remover Usuario</h1>
 
             <form slot="content">
-                <input type="text"  :value="usuario"           readonly>
+                <input type="text"  :value="nome"           readonly>
                 <input type="text"  :value="senha"             readonly>
             </form>
 
@@ -36,7 +36,7 @@ export default {
   
   data() {
     return {
-      usuario: "",
+      nome: "",
       senha: '',
       id: ''
     };
@@ -44,7 +44,7 @@ export default {
 
   methods:{
     el(){
-      this.route = '/login/';
+      this.route = '/usuario/';
       this.datas = JSON.stringify({
         id: this.id,
       })
@@ -54,13 +54,13 @@ export default {
   created(){
     this.showModal = false;
     this.$bus.$on("objectEmited", (login) => {
-        this.usuario = login.usuario
+        this.nome = login.nome
         this.senha = login.senha;
         this.id = login.id;
 
         console.log('========================== delete  ==============================');
-        console.log('delete parametro ==> ' + login.usuario)
-        console.log( 'delete res name  ===> ' + this.usuario)
+        console.log('delete parametro ==> ' + login.nome)
+        console.log( 'delete res name  ===> ' + this.nome)
       });
   },
 }

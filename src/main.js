@@ -7,6 +7,7 @@ import Vuex from 'vuex'
 import store from './store/store'
 import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
+//  import middleware from './components/mixins/middleware'
 
 Vue.use(Vuex)
 Vue.use(VueResource)

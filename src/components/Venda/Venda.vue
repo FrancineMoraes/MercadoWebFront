@@ -40,7 +40,7 @@
 
                 <button type="submit" class="bbtn" @click="counterTroco"></button>    
                 
-                <button type="submit" class="btn btn-success" id="bootshit" @click.stop.prevent="onSubmit">
+                <button type="submit" class="btn btn-success" id="bootshit" @click.stop.prevent="finalizar">
                     Finalizar
                 </button>
             </div>
@@ -56,9 +56,13 @@
 <script>
 import Cupom from './Cupom/Cupom'
 import Navbar from '../Navbar'
+import { create } from '../mixins/create.js'
+import axios from 'axios';
+import { url } from '../mixins/url.js'
 
 export default {
-    components: { Cupom , Navbar},
+    components: { Cupom , Navbar },
+    mixins: [url],
 
     data(){
         return{
@@ -68,17 +72,36 @@ export default {
             cpf: null,
             count: null, 
             countPrice: null
-
         }
     },
 
     methods:{
-        el(){
+        finalizar(){
         this.route = '/venda';
-        this.datas = JSON.stringify({
+        
+        console.log(this.url + this.route)
 
-        });
-      },
+        let datas = JSON.stringify({
+            valorTotal: this.valorTotal,
+            valorRecebido: this.valorRecebido,
+            valorTroco: this.valorTroco,
+            cpf: this.cpf
+        })
+
+        console.log('datas da venda '+datas)
+
+           axios
+            .post(this.url + this.route, datas, {
+                headers: { 'Content-Type': 'application/json'},
+            })
+            .then( (response) => {
+                console.log(response)
+                alert('Venda Finalizada')
+                window.location.reload();
+            })
+            .catch(error => console.log(error))
+              
+          },
 
       counterTroco(){
             if(this.valorTotal > this.valorRecebido){

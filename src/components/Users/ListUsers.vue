@@ -16,8 +16,8 @@
               <Edit />
             </th>
        </tr>
-       <tr v-for="log in login" :key="log.id">
-           <td>{{log.usuario}}</td>
+       <tr v-for="log in usuario" :key="log.id">
+           <td>{{log.nome}}</td>
            <td>{{log.senha}}</td>
            <th>
               <input type="radio" name="log" @change="select(log)">
@@ -42,13 +42,13 @@ export default {
   mixins: [ url, init ],
   data() {
     return {
-      login: null,
+      usuario: null,
     }
   },
   
   methods:{
     el(){
-      this.route = '/login';
+      this.route = '/usuario';
     }
   },
 

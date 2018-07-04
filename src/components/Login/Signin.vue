@@ -2,11 +2,11 @@
         <div class="login">
 	          <h1>Login</h1>
               <form action="">
-    	        <input type="text" name="username" placeholder="Usuário" 
-              required="required" v-model="username"/>
+    	        <input type="text" name="nome" placeholder="Usuário" 
+              required="required" v-model="nome"/>
 
-              <input type="password" name="password" placeholder="Senha" 
-              required="required" v-model="password"/>
+              <input type="password" name="senha" placeholder="Senha" 
+              required="required" v-model="senha"/>
 
               <button type="submit" class="btn btn-dark btn-block btn-large"
               @click.prevent="logar">Enviar</button>
@@ -25,34 +25,36 @@ export default {
 
   data () {
     return {
-      username: null,
-      password: null
+      nome: null,
+      senha: null
     }
   },
 
   methods: {
       logar() {
-        console.log('oi entrei no logar')
-
-        this.route = '/oauth/token'
+        this.route = '/login'
 
         axios
-            .post(this.url + this.route, {
-              username:       this.username,
-              password:       this.password,
-              grant_type:     'password',
-              client:         1
-            }, {
-                header: {
-                  'Content-Type': 'application/x-www-form-urlencoded',
-                  'Content-type': 'multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW'
-                },
-            })
+            .post(this.url + this.route, 
+            {
+              nome: this.nome,
+              senha: this.senha
+            },
+            
+          )
             .then( (response) => {
-                console.log('sucess do login la vem o response')
-                console.log(response)
+                console.log(response.data)
+                let role = response.data.role
+                let token = response.data.token
+                let nome = response.data.nome
+
+                localStorage.setItem('nome', nome)
+                localStorage.setItem('role', role)
+                localStorage.setItem('token', token)
+
+                this.$router.push('/produtos')
             })
-            .catch(error => console.log('dei errinho hahahaa '+error))
+            .catch(error => console.log(error))
               
           }
 

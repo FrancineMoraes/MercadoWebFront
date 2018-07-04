@@ -25,6 +25,7 @@ export const init = {
                   this.produto = res.data;
                   this.usuario = res.data;
                   this.cupom = res.data;
+                  this.venda = res.data;
               });
           },
     },
@@ -34,6 +35,6 @@ export const init = {
     },
     
     updated() {
-          this.init();
+          //this.init();
     }
 }

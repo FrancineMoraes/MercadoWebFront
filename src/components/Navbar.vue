@@ -19,6 +19,7 @@
         </template>
         <b-dropdown-item href="/produtos">Lista de Produtos</b-dropdown-item>
         <b-dropdown-item href="/produtos/busca">Busca de Produtos</b-dropdown-item>
+        <b-dropdown-item href="http://localhost:8080/produto/PDF">Relatório de Produtos</b-dropdown-item>
       
       </b-nav-item-dropdown>
 

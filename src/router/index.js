@@ -57,7 +57,6 @@ export default new Router({
       name: 'Search',
       component: Search
     },
-
     //notfound
     {path: '*', component: NotFound},
   ]

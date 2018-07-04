@@ -54,7 +54,7 @@ export default {
     },
 
     el(){
-        this.route = '/produto';
+        this.route = 'admin/produto';
         this.datas = JSON.stringify({
         nome          :  this.produto.nome,
         codigoDeBarra :  this.produto.codigoDeBarra,

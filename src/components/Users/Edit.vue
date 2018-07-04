@@ -8,7 +8,7 @@
       <h2 slot="header">Editar Usuário</h2>
 
       <form slot="content" class="form-admin-modal">
-          <input type="text" v-model="usuario" placeholder="usuario" required>
+          <input type="text" v-model="nome" placeholder="usuario" required>
           <input type="text" v-model="senha" placeholder="senha">
         </form>
 
@@ -37,7 +37,7 @@ export default {
 
     data() {
         return {
-            usuario: "",
+            nome: "",
             senha: '',
             id: '',
             datas: '',
@@ -47,13 +47,13 @@ export default {
     created() {
     this.showModal = false;
     this.$bus.$on("objectEmited", (login) => {
-        this.usuario = login.usuario;
+        this.nome = login.nome;
         this.senha = login.senha;
         this.id = login.id;
         
         console.log('========================== edit  ==============================');
-        console.log('parametro ====> ' + login.usuario)
-        console.log('res  =====> ' + this.usuario) 
+        console.log('parametro ====> ' + login.nome)
+        console.log('res  =====> ' + this.nome) 
      });
     },
 

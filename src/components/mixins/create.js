@@ -23,10 +23,11 @@ export const create = {
            this.el();
            axios
             .post(this.url + this.route, this.datas, {
-                headers: { 'Content-Type': 'application/json'},
+                headers: { 'Content-Type': 'application/json',
+                    'Authorization' : 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImV4cCI6MTUzMDc0NDk4NX0.bEa3C-vz5WABLc8KucLnHTXN0XbYdE9j1nKqj89gm_FCbFYE1MOIuC0lHyn78IorUv8wDZvK2V4Vn27PPTNGDg'
+                },
             })
             .then( (response) => {
-                console.log('sucess do cupomzinto')
             })
             .catch(error => console.log(error))
               

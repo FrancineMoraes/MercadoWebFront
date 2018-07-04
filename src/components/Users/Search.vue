@@ -6,7 +6,7 @@
 
             <div class="col-sm-12"><br><br></div>
 
-            <b-nav-form>
+            <b-nav-form style="margin-left: 130px;">
                 <b-form-input size="sm" class="mr-sm-2" type="text" v-model="search"
                 placeholder="Search"/>
                 <b-button  v-on:click="Search()" size="sm" class="my-2 my-sm-0"
@@ -24,8 +24,8 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="log in login" v-bind:key="log.id">
-                        <td scope="row">{{log.usuario}}</td>
+                    <tr v-for="log in usuario" v-bind:key="log.id">
+                        <td scope="row">{{log.nome}}</td>
                         <td scope="row">{{log.senha}}</td>
                     </tr>
                 </tbody>
@@ -47,21 +47,21 @@ export default {
     data(){
         return{
             search: '',
-            login:{}
+            usuario:{}
         }
     },
 
     methods: {
         Search: function (){
-            let montada = this.url + "/login/busca/" + this.search;
+            let montada = this.url + "/usuario/busca/" + this.search;
             
             axios
             .get(montada)
             .then(response => {
-                this.login = response.data;
+                this.usuario = response.data;
                 console.log(response.data)
-                for(let i = 0; i<this.login.lenght; i++){
-                    this.login = this.login[i];
+                for(let i = 0; i<this.usuario.lenght; i++){
+                    this.usuario = this.usuario[i];
                 }
                 }).catch(error => {
                     console.log(error)
