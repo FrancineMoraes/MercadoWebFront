@@ -53,7 +53,7 @@ export default {
 
     methods: {
         Search: function (){
-            let montada = this.url + "/usuario/busca/" + this.search;
+            let montada = this.url + "admin/usuario/busca/" + this.search;
             
             axios
             .get(montada)

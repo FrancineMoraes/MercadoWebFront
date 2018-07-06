@@ -52,7 +52,7 @@ export default {
 
         cupom: {
           
-          id:{
+          cupomId:{
             produto_id: null,
             cupom_id: null
           },
@@ -74,7 +74,7 @@ export default {
 
     methods:{
       getProd(){
-        var newurl = this.url + '/produto/barra/' + this.cupom.produto.codigoDeBarra;
+        var newurl = this.url + 'admin/produto/barra/' + this.cupom.produto.codigoDeBarra;
         
         axios
         .get(newurl)
@@ -100,10 +100,10 @@ export default {
     },
 
       el(){
-        this.route = '/cupom';
+        this.route = 'admin/cupom';
         this.datas = JSON.stringify({
           
-          id:{
+          cupomId:{
             produto_id:    this.cupom.produto.id,
           },
           

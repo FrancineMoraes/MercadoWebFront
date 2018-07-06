@@ -48,7 +48,7 @@ export default {
 
   methods:{
     el(){
-      this.route = '/produto/';
+      this.route = 'admin/produto/';
       this.datas = JSON.stringify({
         id: this.id,
       })

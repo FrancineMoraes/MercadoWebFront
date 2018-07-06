@@ -48,9 +48,9 @@ export default {
     },
 
     el(){
-        this.route = '/usuario';
+        this.route = 'admin/usuario';
         this.datas = JSON.stringify({
-        nome      :  this.login.nome,
+        nome         :  this.login.nome,
         senha        :  this.login.senha,
       })
     }

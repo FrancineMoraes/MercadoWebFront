@@ -10,12 +10,12 @@
                     <Delete/>
                 </th>
             </tr>
-            <tr v-for="itens in cupom" :key="itens.cupom_id">
+            <tr v-for="itens in cupom" :key="itens.cupomId.cupomId">
                 <td>{{itens.produto.nome}}</td>
                 <td>{{itens.quantVendida}}</td>
                 <td>{{itens.valorProduto}}</td>
                 <th class="tuamae2">
-                    <input type="radio" name="itens" class="tuamae" @change="select(itens)">
+                    <input type="radio" name="itens" class="tuamae" @change="select2(itens)">
                 </th>
             </tr>
         </table>
@@ -41,7 +41,7 @@ export default {
 
     methods:{
         el(){
-            this.route = '/cupom';
+            this.route = 'admin/cupom';
         }
     }
 }

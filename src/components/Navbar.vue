@@ -19,7 +19,7 @@
         </template>
         <b-dropdown-item href="/produtos">Lista de Produtos</b-dropdown-item>
         <b-dropdown-item href="/produtos/busca">Busca de Produtos</b-dropdown-item>
-        <b-dropdown-item href="http://localhost:8080/produto/PDF">Relatório de Produtos</b-dropdown-item>
+        <b-dropdown-item href="http://localhost:8083/admin/produto/PDF">Relatório de Produtos</b-dropdown-item>
       
       </b-nav-item-dropdown>
 
@@ -43,8 +43,7 @@
         <template slot="button-content">
           Usuário
         </template>
-        <b-dropdown-item href="#">Perfil</b-dropdown-item>
-        <b-dropdown-item href="#">Sair</b-dropdown-item>
+        <b-dropdown-item @click.stop.prevent="sair" href="#">Sair</b-dropdown-item>
       </b-nav-item-dropdown>
     </b-navbar-nav>
 
@@ -55,7 +54,14 @@
 
 <script>
 export default {
-    name: 'Navbar'
+    name: 'Navbar',
+
+    methods:{
+      sair(){
+        localStorage.clear();
+        this.$router.push('/login')
+      }
+    }
 }
 </script>
 

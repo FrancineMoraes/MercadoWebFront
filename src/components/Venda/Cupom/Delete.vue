@@ -40,7 +40,7 @@ export default {
     return {
       cupom: {
           
-          id:{
+        cupomId:{
             produto_id: null,
             cupom_id: null
           },
@@ -62,11 +62,13 @@ export default {
 
   methods:{
     el(){
-      this.route = '/cupom/';
+      this.route = 'admin/cupom/';
       this.datas = JSON.stringify({
-          id: this.cupom.id.cupom_id,
-          id2: this.cupom.id.produto_id
+          id: this.cupom.cupomId.cupom_id,
+          id2: this.cupom.cupomId.produto_id
       })
+      console.log('entrei no delete 2'),
+            console.log(this.cupom.cupomId.cupom_id+'     '+this.cupom.cupomId.produto_id)
     
     this.$bus.$emit('removendo', this.cupom.valorProduto)
     }
@@ -79,7 +81,7 @@ export default {
         this.cupom.produto.codigoDeBarra = itens.produto.codigoDeBarra;
         this.cupom.quantVendida          = itens.quantVendida;
         this.cupom.valorProduto          = itens.valorProduto;
-        this.cupom.id                    = itens.id;
+        this.cupom.cupomId                    = itens.cupomId;
       });
   },
 }

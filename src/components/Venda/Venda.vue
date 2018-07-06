@@ -77,7 +77,7 @@ export default {
 
     methods:{
         finalizar(){
-        this.route = '/venda';
+        this.route = 'admin/venda';
         
         console.log(this.url + this.route)
 
@@ -92,7 +92,10 @@ export default {
 
            axios
             .post(this.url + this.route, datas, {
-                headers: { 'Content-Type': 'application/json'},
+                headers: { 
+                    'Content-Type': 'application/json',
+                    Authorization:'Bearer '+localStorage.getItem('token'),
+                },
             })
             .then( (response) => {
                 console.log(response)

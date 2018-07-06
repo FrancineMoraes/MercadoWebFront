@@ -2,7 +2,6 @@
   <div>
     <div style="margin: -60px 0px 0px 0px;">
       <Navbar/>
-      <button @click.stop.prevent="sair">sair</button>
     </div>
 
     <div class="col-sm-12"><br><br></div>
@@ -58,14 +57,8 @@ export default {
     el(){
       this.route = 'admin/produto';
     },
-
-    sair(){
-      console.log('saindo..')
-      localStorage.clear();
-    }
   },
 
-  
 }
 </script>
 

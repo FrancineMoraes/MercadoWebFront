@@ -16,6 +16,13 @@ export const init = {
             console.log('selectedddddd mmeu parceiro    ' + this.selected.id)
             this.$bus.$emit("objectEmited", this.selected);
         },
+
+        select2(obj) {
+            this.selected = obj;
+            console.log('selectedddddd mmeu parceiro    ' + this.selected.cupomId)
+            this.$bus.$emit("objectEmited", this.selected);
+        },
+
         init() {
             this.el();
             
@@ -35,6 +42,6 @@ export const init = {
     },
     
     updated() {
-          //this.init();
+          this.init();
     }
 }

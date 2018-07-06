@@ -48,7 +48,7 @@ export default {
   
   methods:{
     el(){
-      this.route = '/usuario';
+      this.route = 'admin/usuario';
     }
   },
 

@@ -59,10 +59,10 @@ export default {
 
     methods: {
         el(){
-        this.route = '/login/',
+        this.route = 'admin/usuario/',
         this.datas = JSON.stringify({
             id: this.id,
-            usuario: this.usuario,
+            nome: this.nome,
             senha: this.senha,
         })
             console.log('datassss edit nessa caralhaaaaa' + this.datas);

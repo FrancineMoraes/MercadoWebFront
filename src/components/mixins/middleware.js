@@ -6,7 +6,8 @@ axios.interceptors.request.use(req => {
     console.log(token)
 
     if(token != null) {
-        req.headers.Authorization = 'Bearer ${token}';
+        console.log(token+'token do if')
+        req.headers.Authorization = "Bearer "+token;
         console.log('entrei no if token != null')
     }
 
