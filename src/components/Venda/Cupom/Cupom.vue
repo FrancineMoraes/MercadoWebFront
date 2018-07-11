@@ -10,21 +10,17 @@
             <div class="inputs">
                 <label for="codigoDeBarra">Código de Barra: 
                 <input type="text" name="codigoDeBarra" 
-                v-model="cupom.produto.codigoDeBarra">
+                v-model="cupom.produto.codigoDeBarra" v-on:keyup.enter="getProd">
                 </label>
-                  <button type="submit" class="bbtn" @click="getProd"></button>
-        
+
                 <label for="estoque">Quantidade: 
-                  <input type="text" name="estoque" v-model="cupom.quantVendida">
+                  <input type="text" name="estoque" v-model="cupom.quantVendida"
+                    v-on:keyup.enter="onSubmit(), counter(), counterPrice(), reset()">
                 </label>
 
                 <label for="valorUn">Valor unitário: 
                   <input type="text" name="valorUn" :value="cupom.produto.valorUn">
                 </label>
-
-                <button type="submit" class="bbtn" @click.stop.prevent="onSubmit" 
-                  @click="counter(), counterPrice(), reset()">
-                </button>
             </div>
 
             <List/>

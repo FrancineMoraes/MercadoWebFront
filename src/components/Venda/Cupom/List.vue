@@ -10,7 +10,7 @@
                     <Delete/>
                 </th>
             </tr>
-            <tr v-for="itens in cupom" :key="itens.cupomId.cupomId">
+            <tr v-for="itens in cupom" :key="itens.cupomId.cupom_id">
                 <td>{{itens.produto.nome}}</td>
                 <td>{{itens.quantVendida}}</td>
                 <td>{{itens.valorProduto}}</td>

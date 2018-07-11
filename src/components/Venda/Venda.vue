@@ -27,7 +27,8 @@
             <div class="direita">
                 <div class="recebido">
                     <label for="valorRecebido"> Valor Recebido
-                        <input type="text" name="valorRecebido" v-model="valorRecebido">
+                        <input type="text" name="valorRecebido" v-model="valorRecebido"
+                            v-on:keyup.enter="counterTroco">
                     </label>
                 </div>
 
@@ -36,9 +37,6 @@
                         <input type="text" name="valorTroco" :value="valorTroco">
                     </label>
                 </div>
-
-
-                <button type="submit" class="bbtn" @click="counterTroco"></button>    
                 
                 <button type="submit" class="btn btn-success" id="bootshit" @click.stop.prevent="finalizar">
                     Finalizar
