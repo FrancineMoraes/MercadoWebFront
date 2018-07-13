@@ -19,7 +19,8 @@
         </template>
         <b-dropdown-item href="/produtos">Lista de Produtos</b-dropdown-item>
         <b-dropdown-item href="/produtos/busca">Busca de Produtos</b-dropdown-item>
-        <b-dropdown-item href="http://localhost:8083/admin/produto/PDF">Relatório de Produtos</b-dropdown-item>
+        <b-dropdown-item href="http://localhost:8083/admin/produto/prodpdf">Relatório de Produtos</b-dropdown-item>
+        <b-dropdown-item href="http://localhost:8083/admin/produto/estoquepdf/100">Relatório de Produtos por Quantidade</b-dropdown-item>
       
       </b-nav-item-dropdown>
 
@@ -53,6 +54,7 @@
 </template>
 
 <script>
+
 export default {
     name: 'Navbar',
 
@@ -66,7 +68,7 @@ export default {
       sair(){
         localStorage.clear();
         this.$router.push('/login')
-      }
+      },
     }
 }
 </script>

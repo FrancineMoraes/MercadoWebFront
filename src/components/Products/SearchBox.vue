@@ -57,7 +57,7 @@ export default {
 
     methods: {
         Search: function (){
-            var montada = this.url + "admin/produto/nome/" +this.search;
+            var montada = this.url + "admin/produto/nome/like/" +this.search;
             
             axios
             .get(montada)
