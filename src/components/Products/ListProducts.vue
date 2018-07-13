@@ -147,5 +147,6 @@ table th {
   table td:last-child {
     border-bottom: 0;
   }
+
 }
 </style>

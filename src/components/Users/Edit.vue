@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-button variant="warning" @click="show" >Editar</b-button>
+    <b-button variant="warning" @click="show" style="width: 75px;" >Editar</b-button>
 
     <modal v-if="showModal" @show="show()">
 

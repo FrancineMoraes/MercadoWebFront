@@ -41,7 +41,7 @@
       <b-nav-item-dropdown right>
         <!-- Using button-content slot -->
         <template slot="button-content">
-          Usuário
+          {{usuario}}
         </template>
         <b-dropdown-item @click.stop.prevent="sair" href="#">Sair</b-dropdown-item>
       </b-nav-item-dropdown>
@@ -55,6 +55,12 @@
 <script>
 export default {
     name: 'Navbar',
+
+    data(){
+      return{
+        usuario: localStorage.getItem('nome')
+      }
+    },
 
     methods:{
       sair(){

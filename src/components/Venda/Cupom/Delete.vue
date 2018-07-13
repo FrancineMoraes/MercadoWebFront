@@ -67,8 +67,6 @@ export default {
           id: this.cupom.cupomId.cupom_id,
           id2: this.cupom.cupomId.produto_id
       })
-      console.log('entrei no delete 2'),
-            console.log(this.cupom.cupomId.cupom_id+'     '+this.cupom.cupomId.produto_id)
     
     this.$bus.$emit('removendo', this.cupom.valorProduto)
     }

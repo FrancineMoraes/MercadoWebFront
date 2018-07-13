@@ -1,7 +1,7 @@
  <template>
      <div>
 
-      <b-button variant="danger" @click="show" >Excluir</b-button>
+      <b-button variant="danger" style="width: 75px;" @click="show" >Excluir</b-button>
 
       <modal v-if="showModal" @show="show()">
             <h1 slot="header">Remover Produto</h1>

@@ -120,26 +120,42 @@ export default {
     created(){
         
         this.$bus.$on('removendo', valorProduto =>{
-            console.log('entrei no removendo')
+            console.log('entrei no removendo ---------------')
             this.count = this.count - 1
-            console.log(this.count)
+            console.log(this.count + '-------------------------')
             this.countPrice = this.countPrice - valorProduto
+            this.valorTotal = this.countPrice
             console.log(this.countPrice)
+            console.log('this valor total ---------------- ' + this.valorTotal)
+
+            if(this.valorTotal < 0){
+                this.valorTotal = 0
+                this.countPrice = 0
+            }
             
             this.$bus.$emit('increment', -1)
 
             this.$bus.$emit('countPrice' -valorProduto)
       })
         
+        
     
     this.$bus.$on('increment', count => {
         this.count = count
+
+        if(this.count < 0){
+            this.count = 0
+        }
         console.log('this.count' + this.count)
     }),
 
     this.$bus.$on('countPrice', countPrice => {
         this.countPrice = countPrice
         this.valorTotal = this.countPrice
+
+        if(this.valorTotal < 0){
+            this.valorTotal = 0
+        }
         console.log('this.countPrice ' + this.countPrice)
     })
     }
@@ -184,5 +200,6 @@ export default {
 {
     height: 2.8em;
     margin: 1.6em -2em;
+    margin-left: 1px;
 }
 </style>
